@@ -28,8 +28,10 @@ if __name__ == '__main__':
     even_sem = Semaphore(1)
     odd_sem = Semaphore(0)
 
-    ev = Thread(name='even', target=print_even, args=(even_sem, odd_sem))
-    od = Thread(name='odd', target=print_odd, args=(even_sem, odd_sem))
+    ev = Thread(name='even', target=print_even, 
+                args=(even_sem, odd_sem))
+    od = Thread(name='odd', target=print_odd, 
+                args=(even_sem, odd_sem))
 
     ev.start()
     time.sleep(0.1)
