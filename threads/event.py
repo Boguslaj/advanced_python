@@ -32,9 +32,10 @@ if __name__ == '__main__':
     print_even = threading.Event()
     print_odd = threading.Event()
 
-    ev = threading.Thread(name='even', target=even, 
+    ev = threading.Thread(name='even', target=even,
                           args=(print_even, print_odd,))
-    od = threading.Thread(name='odd', target=odd, 
+    od = threading.Thread(name='odd', target=odd,
+                          args=(print_even, print_odd,))
 
     magick(print_even)
     ev.start()

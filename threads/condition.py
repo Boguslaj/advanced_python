@@ -39,11 +39,11 @@ if __name__ == '__main__':
     condition_e = threading.Condition()
     condition_o = threading.Condition()
 
-    cs1 = threading.Thread(name='even', target=even_c, 
+    cs1 = threading.Thread(name='even', target=even_c,
                            args=(condition_e, condition_o,))
-    cs2 = threading.Thread(name='odd', target=odd_c, 
+    cs2 = threading.Thread(name='odd', target=odd_c,
                            args=(condition_e, condition_o,))
-    launcher = threading.Thread(name='Launch', 
+    launcher = threading.Thread(name='Launch',
                                 target=launch, args=(condition_e,))
 
     cs1.start()

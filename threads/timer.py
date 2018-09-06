@@ -1,4 +1,5 @@
-from threading import Thread, Timer
+from threading import Thread
+from threading import Timer
 import time
 
 

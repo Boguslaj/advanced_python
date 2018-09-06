@@ -1,4 +1,5 @@
-from threading import Thread, Semaphore
+from threading import Thread
+from threading import Semaphore
 import time
 
 
@@ -28,9 +29,9 @@ if __name__ == '__main__':
     even_sem = Semaphore(1)
     odd_sem = Semaphore(0)
 
-    ev = Thread(name='even', target=print_even, 
+    ev = Thread(name='even', target=print_even,
                 args=(even_sem, odd_sem))
-    od = Thread(name='odd', target=print_odd, 
+    od = Thread(name='odd', target=print_odd,
                 args=(even_sem, odd_sem))
 
     ev.start()
