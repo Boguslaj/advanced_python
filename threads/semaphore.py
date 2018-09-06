@@ -1,5 +1,5 @@
-from threading import Thread
 from threading import Semaphore
+from threading import Thread
 import time
 
 
@@ -30,9 +30,9 @@ if __name__ == '__main__':
     odd_sem = Semaphore(0)
 
     ev = Thread(name='even', target=print_even,
-                args=(even_sem, odd_sem))
+                args=(even_sem, odd_sem,))
     od = Thread(name='odd', target=print_odd,
-                args=(even_sem, odd_sem))
+                args=(even_sem, odd_sem,))
 
     ev.start()
     time.sleep(0.1)
