@@ -35,7 +35,6 @@ if __name__ == '__main__':
     ev = threading.Thread(name='even', target=even, 
                           args=(print_even, print_odd,))
     od = threading.Thread(name='odd', target=odd, 
-                          args=(print_even, print_odd,))
 
     magick(print_even)
     ev.start()
