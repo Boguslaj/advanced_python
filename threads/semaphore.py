@@ -3,7 +3,7 @@ from threading import Thread
 import time
 
 
-num_list = [i for i in range(0,101)]
+num_list = [i for i in range(0, 101)]
 num_list.reverse()
 
 
