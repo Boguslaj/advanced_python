@@ -15,7 +15,7 @@ async def is_prime(x):
 
 async def prime_sum(first, last):
     res = 0
-    for i in range(first, last+1):
+    for i in range(first, last + 1):
         res += await is_prime(i)
     print(res)
 
