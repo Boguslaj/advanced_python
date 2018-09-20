@@ -1,4 +1,4 @@
-class Money:
+class Money(object):
     exchange = {
         'USD': 1,
         'BYN': 2.12,
@@ -25,7 +25,7 @@ class Money:
             added = other.value / Money.exchange[other.currency]
             new_value = self.value + (added * Money.exchange[self.currency])
         return Money(new_value, self.currency)
-    
+
     def __radd__(self, other):
         universal = self.value / Money.exchange[self.currency]
         new_value = (universal + other) * Money.exchange[self.currency]
