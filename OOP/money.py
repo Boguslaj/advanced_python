@@ -68,10 +68,10 @@ if __name__ == '__main__':
     print(e + (j * 4.5) + (0.5 * b))
 
     x = Money(10, "BYN")
-    y = Money(11) # define your own default value, e.g. “USD”
+    y = Money(11)  # define your own default value, e.g. “USD”
     z = Money(12.34, "EUR")
-    print(z + (3.11 * x) + (y * 0.8)) # result in “EUR”
+    print(z + (3.11 * x) + (y * 0.8))  # result in “EUR”
 
-    lst = [Money(10,"BYN"), Money(11), Money(12.01, "JPY")]
+    lst = [Money(10, "BYN"), Money(11), Money(12.01, "JPY")]
     s = sum(lst)
-    print(s) #result in “BYN”
+    print(s)  # result in “BYN”
