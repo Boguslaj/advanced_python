@@ -1,6 +1,7 @@
 from collections import namedtuple
 from itertools import filterfalse
 
+
 def sort(array):
     less = []
     equal = []
@@ -23,7 +24,7 @@ def sort(array):
 def itemise(line):
     par = line.split(',')
     item = Item(par[0], int(par[1]), int(par[2]),
-                int(par[2])/int(par[1]))
+                int(par[2]) / int(par[1]))
     return item
 
 
@@ -47,13 +48,13 @@ if __name__ == '__main__':
     with open('stuff.txt') as f:
         lines = f.readlines()
 
-    Item = namedtuple("Item",'name weight value efficiency')
+    Item = namedtuple("Item", 'name weight value efficiency')
 
     stuff = list(map(itemise, lines))
 
     stuff = sort(stuff)
     backpack = Knapsack()
-    backpack.stored = list(filterfalse(lambda x: x is None, 
+    backpack.stored = list(filterfalse(lambda x: x is None,
                                        list(map(backpack.store, stuff))))
 
     print('Space left: ' + str(backpack.capasity_left))
