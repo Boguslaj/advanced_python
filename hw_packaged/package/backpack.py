@@ -1,16 +1,17 @@
 from collections import namedtuple
 from itertools import filterfalse
 import os
+import sys
 
 
 def get_abs_real_path():
     """Returns real absolute path to the package"""
     try:
         real_path = __file__ if os.path.islink(__file__) else \
-                    os.path.realpath(__file__)
+            os.path.realpath(__file__)
 
         return os.path.dirname(os.path.abspath(real_path))
-    except:
+    except Exception:
         print("Something went wrong ...")
         sys.exit()
 
@@ -57,7 +58,7 @@ def start():
     print("Starting application ...")
 
     path = get_abs_real_path()
-    resource_file = os.path.join(path,'resources', 'stuff.txt')
+    resource_file = os.path.join(path, 'resources', 'stuff.txt')
     with open(resource_file) as f:
         lines = f.readlines()
 
