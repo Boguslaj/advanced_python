@@ -35,4 +35,4 @@ p.legion = 1
 print(p.centurion)
 print(p.legion)
 print(Metaticus.__dict__)
-print(p.__dict__) 
+print(p.__dict__)
