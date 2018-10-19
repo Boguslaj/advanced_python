@@ -6,7 +6,7 @@ class Metaticus(type):
             for k in classdict:
                 property_name = k[3:]
 
-                def def_p_del(self, property_name):
+                def def_p_get(self, property_name):
                     return getattr(self, property_name)
 
                 def def_p_set(self, property_name, value):
@@ -20,10 +20,10 @@ class Metaticus(type):
                         get_property_func = classdict.get(k)
                         set_property_func = classdict.get(
                             'set' + property_name, def_p_set
-                            )
+                        )
                         del_property_func = classdict.get(
                             'del' + property_name, def_p_del
-                            )
+                        )
                         print(set_property_func)
 
                         setattr(self, property_name, None)
@@ -37,10 +37,10 @@ class Metaticus(type):
                         set_property_func = classdict.get(k)
                         get_property_func = classdict.get(
                             'get' + property_name, def_p_get
-                            )
+                        )
                         del_property_func = classdict.get(
                             'del' + property_name, def_p_del
-                            )
+                        )
 
                         setattr(self, property_name, None)
                         setattr(self.__class__, property_name[1:],
@@ -53,10 +53,10 @@ class Metaticus(type):
                         del_property_func = classdict.get(k)
                         get_property_func = classdict.get(
                             'get' + property_name, def_p_get
-                            )
+                        )
                         set_property_func = classdict.get(
                             'set' + property_name, def_p_set
-                            )
+                        )
 
                         setattr(self, property_name, None)
                         setattr(self.__class__, property_name[1:],
